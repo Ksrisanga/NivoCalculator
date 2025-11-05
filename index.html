@@ -75,8 +75,7 @@ th,td{padding:10px 12px;border-bottom:1px solid var(--line)}th{background:#f3f4f
           <div style="flex:1"><label>Regimen</label><select id="regimen"></select></div>
         </div>
         <div class="small" style="margin-top:6px">
-          Flat dose: 240 mg Q2W (pay7/free7), 360 mg Q3W (pay5/free5), 480 mg Q4W (pay3.5/free3.5) — Free up to 2 years.
-          <b>mg/kg</b>: Buy-1-Get-1 สลับกัน, <b>คุม 10 เดือน</b>.
+      
         </div>
       </div>
     </section>
@@ -92,7 +91,7 @@ th,td{padding:10px 12px;border-bottom:1px solid var(--line)}th{background:#f3f4f
         </div>
         <div class="inline" style="margin-top:10px">
           <div style="flex:1"><label>Nivolumab — 120 mg (THB)</label><input id="price120" type="number" value="70620"></div>
-          <div style="flex:1"><label>Ipilimumab — 50 mg (THB)</label><input id="priceIpi50" type="number" value="60348"><div class="small">IPI promo: 1-for-1 (ถ้าระบุในชีต)</div></div>
+          <div style="flex:1"><label>Ipilimumab — 50 mg (THB)</label><input id="priceIpi50" type="number" value="60348"><div class="small"></div></div>
         </div>
         <div style="margin-top:8px">
           <label>Allowed vial sizes</label>
@@ -379,7 +378,7 @@ function onCalc(){
   // Render
   const allowedLabel = `Vial availability: ${allowed.sort((a,b)=>a-b).join(', ')} mg`;
   const promoHtml = promoNote ? `<div class="small" style="margin:6px 0 10px;color:#0369a1">${promoNote}</div>` : '';
-  const perCycleLabel = `${fmt(perCycleTotalMg)} mg <span class="small">(คิดค่า/รอบจาก ${fmt(mgForCostPerCycle)} mg)</span>`;
+  const perCycleLabel = `${fmt(perCycleTotalMg)} mg <span class="small">()</span>`;
 
   const rows=[];
   rows.push(`<tr><th>Item</th><th class="center">Per-cycle Qty</th><th class="center">Vial mix</th><th class="right">Cost / cycle (THB)</th></tr>`);
@@ -457,3 +456,4 @@ $('#regimen').addEventListener('change',onCalc);
 $('#calcBtn').addEventListener('click',onCalc);
 </script>
 </body></html>
+
